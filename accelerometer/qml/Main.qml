@@ -24,7 +24,7 @@ import io.thp.pyotherside 1.4
 MainView {
     id: root
     objectName: 'mainView'
-    applicationName: 'sensors-rt.smaddali'
+    applicationName: 'accelerometer.smaddali'
     automaticOrientation: true
 
     width: units.gu(45)
@@ -35,7 +35,7 @@ MainView {
 
         header: PageHeader {
             id: header
-            title: i18n.tr('sensors-rt')
+            title: i18n.tr('Accelerometer')
         }
 
         Label {

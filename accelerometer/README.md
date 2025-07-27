@@ -1,4 +1,4 @@
-# sensors-rt
+# accelerometer
 
 A real-time display of chosen onboard sensor data, with the option to dump data to disk.
 

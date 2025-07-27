@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.0)
-project(sensors-rt C CXX)
+project(accelerometer C CXX)
 
 # Automatically create moc files
 set(CMAKE_AUTOMOC ON)
@@ -11,8 +11,8 @@ execute_process(
 )
 set(QT_IMPORTS_DIR "lib/${ARCH_TRIPLET}")
 
-set(PROJECT_NAME "sensors-rt")
-set(FULL_PROJECT_NAME "sensors-rt.smaddali")
+set(PROJECT_NAME "accelerometer")
+set(FULL_PROJECT_NAME "accelerometer.smaddali")
 set(DATA_DIR /)
 set(DESKTOP_FILE_NAME ${PROJECT_NAME}.desktop)
 

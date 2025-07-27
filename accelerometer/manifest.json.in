@@ -1,0 +1,15 @@
+{
+    "name": "accelerometer.smaddali",
+    "description": "A real-time display of onboard sensor data",
+    "architecture": "@CLICK_ARCH@",
+    "title": "Accelerometer",
+    "hooks": {
+        "accelerometer": {
+            "apparmor": "accelerometer.apparmor",
+            "desktop":  "accelerometer.desktop"
+        }
+    },
+    "version": "1.0.0",
+    "maintainer": "Siddharth Maddali <smaddali@alumni.cmu.edu>",
+    "framework" : "@CLICK_FRAMEWORK@"
+}
