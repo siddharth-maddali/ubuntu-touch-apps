@@ -1,6 +1,6 @@
 {
     "name": "accelerometer.smaddali",
-    "description": "A real-time display of onboard sensor data",
+    "description": "A simple accelerometer app",
     "architecture": "@CLICK_ARCH@",
     "title": "Accelerometer",
     "hooks": {

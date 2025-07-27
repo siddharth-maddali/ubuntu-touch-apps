@@ -1,5 +1,5 @@
 [Desktop Entry]
-_Name=Accelerometer
+Name=Accelerometer
 Exec=qmlscene %U qml/Main.qml
 Icon=assets/logo.svg
 Terminal=false

@@ -5,7 +5,7 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; version 3.
  *
- * sensors-rt is distributed in the hope that it will be useful,
+ * sensor-dump is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
@@ -16,10 +16,7 @@
 
 import QtQuick 2.7
 import Lomiri.Components 1.3
-//import QtQuick.Controls 2.2
-import QtQuick.Layouts 1.3
-import Qt.labs.settings 1.0
-import io.thp.pyotherside 1.4
+import QtSensors 5.0
 
 MainView {
     id: root
@@ -27,7 +24,7 @@ MainView {
     applicationName: 'accelerometer.smaddali'
     automaticOrientation: true
 
-    width: units.gu(45)
+    width: units.gu(36)
     height: units.gu(75)
 
     Page {
@@ -38,36 +35,34 @@ MainView {
             title: i18n.tr('Accelerometer')
         }
 
-        Label {
-            anchors {
-                top: header.bottom
-                left: parent.left
-                right: parent.right
-                bottom: parent.bottom
+        Column {
+            anchors.centerIn: parent
+            spacing: units.gu(2)
+
+            Label {
+                id: xLabel
+                text: 'X: '
             }
-            text: i18n.tr('Check the logs!')
 
-            verticalAlignment: Label.AlignVCenter
-            horizontalAlignment: Label.AlignHCenter
-        }
-    }
+            Label {
+                id: yLabel
+                text: 'Y: '
+            }
 
-    Python {
-        id: python
-
-        Component.onCompleted: {
-            addImportPath(Qt.resolvedUrl('../src/'));
-
-            importModule('example', function() {
-                console.log('module imported');
-                python.call('example.speak', ['Hello World!'], function(returnValue) {
-                    console.log('example.speak returned ' + returnValue);
-                })
-            });
+            Label {
+                id: zLabel
+                text: 'Z: '
+            }
         }
 
-        onError: {
-            console.log('python error: ' + traceback);
+        Accelerometer {
+            id: accelerometer
+            active: true
+            onReadingChanged: {
+                xLabel.text = 'X: ' + accelerometer.reading.x.toFixed(4) + ' m/s²';
+                yLabel.text = 'Y: ' + accelerometer.reading.y.toFixed(4) + ' m/s²';
+                zLabel.text = 'Z: ' + accelerometer.reading.z.toFixed(4) + ' m/s²';
+            }
         }
     }
 }
