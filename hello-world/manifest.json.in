@@ -1,0 +1,15 @@
+{
+    "name": "hello-world.smaddali",
+    "description": "A simple hello-world app",
+    "architecture": "@CLICK_ARCH@",
+    "title": "Hello World",
+    "hooks": {
+        "hello-world": {
+            "apparmor": "hello-world.apparmor",
+            "desktop":  "hello-world.desktop"
+        }
+    },
+    "version": "1.0.0",
+    "maintainer": "Siddharth Maddali <smaddali@alumni.cmu.edu>",
+    "framework" : "@CLICK_FRAMEWORK@"
+}
